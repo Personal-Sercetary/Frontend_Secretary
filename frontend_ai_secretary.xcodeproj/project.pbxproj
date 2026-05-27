@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FA9EB64B2FC63F1B00D070EA /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = FA9EB64A2FC63F1B00D070EA /* Supabase */; };
-		FA9EB6582FC6437600D070EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EB6532FC6437600D070EA /* ContentView.swift */; };
 		FA9EB6592FC6437600D070EA /* frontend_ai_secretaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EB6542FC6437600D070EA /* frontend_ai_secretaryApp.swift */; };
-		FA9EB65A2FC6437600D070EA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EB6552FC6437600D070EA /* Item.swift */; };
 		FA9EB65B2FC6437600D070EA /* SupabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EB6562FC6437600D070EA /* SupabaseManager.swift */; };
 		FA9EB65C2FC6437600D070EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA9EB6512FC6437600D070EA /* Assets.xcassets */; };
 		FA9EB65D2FC6437600D070EA /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FA9EB6522FC6437600D070EA /* Config.xcconfig */; };
@@ -20,11 +18,22 @@
 		FA9EB62C2FC634F500D070EA /* frontend_ai_secretary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = frontend_ai_secretary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9EB6512FC6437600D070EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA9EB6522FC6437600D070EA /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
-		FA9EB6532FC6437600D070EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA9EB6542FC6437600D070EA /* frontend_ai_secretaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = frontend_ai_secretaryApp.swift; sourceTree = "<group>"; };
-		FA9EB6552FC6437600D070EA /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		FA9EB6562FC6437600D070EA /* SupabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		FA9EB66B2FC7830A00D070EA /* Auth */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		FA9EB6712FC7849D00D070EA /* Auth */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Auth;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		FA9EB6292FC634F500D070EA /* Frameworks */ = {
@@ -65,7 +74,6 @@
 		FA9EB6502FC6437600D070EA /* App */ = {
 			isa = PBXGroup;
 			children = (
-				FA9EB6532FC6437600D070EA /* ContentView.swift */,
 				FA9EB6542FC6437600D070EA /* frontend_ai_secretaryApp.swift */,
 			);
 			path = App;
@@ -76,11 +84,11 @@
 			children = (
 				FA9EB6502FC6437600D070EA /* App */,
 				FA9EB65E2FC6437D00D070EA /* Models */,
-				FA9EB6612FC6447A00D070EA /* Views */,
+				FA9EB66A2FC782F900D070EA /* Views */,
 				FA9EB6622FC6448100D070EA /* ViewModels */,
 				FA9EB6632FC6449D00D070EA /* Utils */,
-				FA9EB6602FC6445C00D070EA /* Resources */,
 				FA9EB65F2FC6445600D070EA /* Core */,
+				FA9EB6602FC6445C00D070EA /* Resources */,
 			);
 			path = frontend_ai_secretary;
 			sourceTree = "<group>";
@@ -88,7 +96,6 @@
 		FA9EB65E2FC6437D00D070EA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FA9EB6552FC6437600D070EA /* Item.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -110,16 +117,10 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		FA9EB6612FC6447A00D070EA /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		FA9EB6622FC6448100D070EA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				FA9EB6712FC7849D00D070EA /* Auth */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -129,6 +130,14 @@
 			children = (
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		FA9EB66A2FC782F900D070EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA9EB66B2FC7830A00D070EA /* Auth */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +154,10 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				FA9EB66B2FC7830A00D070EA /* Auth */,
+				FA9EB6712FC7849D00D070EA /* Auth */,
 			);
 			name = frontend_ai_secretary;
 			packageProductDependencies = (
@@ -208,9 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA9EB6582FC6437600D070EA /* ContentView.swift in Sources */,
 				FA9EB6592FC6437600D070EA /* frontend_ai_secretaryApp.swift in Sources */,
-				FA9EB65A2FC6437600D070EA /* Item.swift in Sources */,
 				FA9EB65B2FC6437600D070EA /* SupabaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,6 +231,7 @@
 /* Begin XCBuildConfiguration section */
 		FA9EB6372FC634F700D070EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA9EB6522FC6437600D070EA /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -284,6 +296,7 @@
 		};
 		FA9EB6382FC634F700D070EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA9EB6522FC6437600D070EA /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -341,6 +354,7 @@
 		};
 		FA9EB63A2FC634F700D070EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA9EB6522FC6437600D070EA /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -355,6 +369,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,6 +389,7 @@
 		};
 		FA9EB63B2FC634F700D070EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA9EB6522FC6437600D070EA /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -388,6 +404,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,22 +1,31 @@
 import Foundation
 import Supabase
 
-enum AppSecrets { // Змінили назву тут
-    static let supabaseUrl: URL = {
+enum SupabaseManager {
+    private static let supabaseUrl: URL = {
         guard let urlString = Bundle.main.object(forInfoDictionaryKey: "SUPABASE_URL") as? String,
+              !urlString.isEmpty,
               let url = URL(string: urlString) else {
-            fatalError("🚨 Не знайдено SUPABASE_URL в Info.plist")
+            return URL(string: "https://placeholder.supabase.co")!
         }
         return url
     }()
 
-    static let supabaseKey: String = {
-        guard let key = Bundle.main.object(forInfoDictionaryKey: "SUPABASE_ANON_KEY") as? String else {
-            fatalError("🚨 Не знайдено SUPABASE_ANON_KEY в Info.plist")
+    private static let supabaseKey: String = {
+        guard let key = Bundle.main.object(forInfoDictionaryKey: "SUPABASE_ANON_KEY") as? String,
+              !key.isEmpty else {
+            return "placeholder-key"
         }
         return key
     }()
-}
 
-// Використовуємо нову назву AppSecrets
-let supabase = SupabaseClient(supabaseURL: AppSecrets.supabaseUrl, supabaseKey: AppSecrets.supabaseKey)
+    static let client = SupabaseClient(
+        supabaseURL: supabaseUrl,
+        supabaseKey: supabaseKey,
+        options: SupabaseClientOptions(
+            auth: SupabaseClientOptions.AuthOptions(
+                emitLocalSessionAsInitialSession: true
+            )
+        )
+    )
+}
