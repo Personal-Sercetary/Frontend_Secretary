@@ -1,9 +1,9 @@
-
 import Foundation
 import Supabase
 import SwiftUI
 import Combine
-import AuthenticationServices
+import GoogleSignIn
+
 @MainActor
 class AuthViewModel: ObservableObject {
     @Published var isAuthenticated = false
@@ -32,6 +32,7 @@ class AuthViewModel: ObservableObject {
         
         do {
             try await SupabaseManager.client.auth.signIn(email: email, password: password)
+            print("✅ SignUp response: ")
             isAuthenticated = true
         } catch {
             errorMessage = error.localizedDescription // Ось так ми дістаємо текст помилки
@@ -55,46 +56,39 @@ class AuthViewModel: ObservableObject {
             errorMessage = error.localizedDescription
         }
     }
-    
+
     func signInWithGoogle() async {
         isLoading = true
+        errorMessage = nil
         defer { isLoading = false }
         
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let rootViewController = windowScene.windows.first?.rootViewController else {
+            errorMessage = "Не вдалось знайти вікно"
+            return
+        }
+        
         do {
-            // 1. Отримуємо URL для логіну від Supabase
-            let url = try await SupabaseManager.client.auth.getOAuthSignInURL(
-                provider: .google,
-                redirectTo: URL(string: "aisecretary://login-callback")! // Схема, яку ви вказали в Xcode
+            // 1. Нативний Google Sign In
+            let result = try await GIDSignIn.sharedInstance.signIn(
+                withPresenting: rootViewController
             )
             
-            // 2. Відкриваємо системне вікно авторизації
-            let session = ASWebAuthenticationSession(
-                url: url,
-                callbackURLScheme: "aisecretary"
-            ) { callbackURL, error in
-                if let error = error {
-                    self.errorMessage = error.localizedDescription
-                    return
-                }
-                if let callbackURL = callbackURL {
-                    Task {
-                        do {
-                            // 3. Передаємо результат назад у Supabase
-                            try await SupabaseManager.client.auth.session(from: callbackURL)
-                            await MainActor.run {
-                                self.isAuthenticated = true
-                            }
-                        } catch {
-                            await MainActor.run {
-                                self.errorMessage = error.localizedDescription
-                            }
-                        }
-                    }
-                }
+            guard let idToken = result.user.idToken?.tokenString else {
+                errorMessage = "Не вдалось отримати токен"
+                return
             }
             
-            session.presentationContextProvider = WindowContextProvider()
-            session.start()
+            // 2. Передаємо токен в Supabase
+            try await SupabaseManager.client.auth.signInWithIdToken(
+                credentials: .init(
+                    provider: .google,
+                    idToken: idToken,
+                    accessToken: result.user.accessToken.tokenString
+                )
+            )
+            
+            isAuthenticated = true
             
         } catch {
             errorMessage = error.localizedDescription
