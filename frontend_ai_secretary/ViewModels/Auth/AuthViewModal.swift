@@ -94,6 +94,25 @@ class AuthViewModel: ObservableObject {
             errorMessage = error.localizedDescription
         }
     }
-    
+    func signOut() async {
+            isLoading = true
+            errorMessage = nil
+            defer { isLoading = false }
+            
+            do {
+                // 1. Виходимо з Supabase
+                try await SupabaseManager.client.auth.signOut()
+                
+                // 2. Виходимо з локального Google SDK (щоб забути обраний акаунт)
+                GIDSignIn.sharedInstance.signOut()
+                
+                // 3. Змінюємо стан додатку
+                isAuthenticated = false
+                print("✅ Користувач успішно вийшов")
+            } catch {
+                errorMessage = error.localizedDescription
+                print("❌ Помилка виходу: \(error)")
+            }
+        }
 }
 
