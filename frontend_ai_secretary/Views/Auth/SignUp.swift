@@ -51,104 +51,34 @@ struct SignUp: View {
                 VStack(spacing: 35) {
                     VStack(alignment: .leading, spacing: 15) {
                         
-                        // ==========================================
-                        // --- EMAIL ---
-                        // ==========================================
-                        Text("Email address")
-                            .font(.subheadline)
-                            .foregroundColor(Color("tx-3"))
-                            .padding(.horizontal, 5)
-                        
-                        // HStack заміняє TextFieldStyle: іконка і текст живуть в одному фоні
-                        HStack(spacing: 12) {
-                            Image(systemName: "envelope")
-                                .foregroundColor(Color("tx-3"))
-                            
-                            TextField("Enter your email address", text: $email)
-                                .keyboardType(.emailAddress)
-                                .textContentType(.emailAddress)
-                                .autocapitalization(.none)
-                                .autocorrectionDisabled(true)
-                                .foregroundColor(.primary)
-                                .tint(.primary)
-                                .accentColor(.primary)
-                        }
-                        .padding() // Відступи всередині поля
-                        .background(Color(.secondarySystemBackground)) // Фон поля
-                        .cornerRadius(12) // Закруглення
-                        .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color(.separator), lineWidth: 0.5)) // Рамка
-                        
-                        
-                        // ==========================================
-                        // --- ПАРОЛЬ ---
-                        // ==========================================
-                        Text("Password")
-                            .font(.subheadline)
-                            .foregroundColor(Color("tx-3"))
-                            .padding(.horizontal, 5)
-                        
-                        HStack(spacing: 12) {
-                            Image(systemName: "lock")
-                                .foregroundColor(Color("tx-3"))
-                            
-                            Group {
-                                if isPasswordVisible {
-                                    TextField("Enter your password", text: $password)
-                                } else {
-                                    SecureField("Enter your password", text: $password)
-                                }
-                            }
-                            .textContentType(.newPassword)
-                            .foregroundColor(.primary)
-                            .tint(.primary)
-                            .accentColor(.primary)
-                            
-                            // Око тепер лежить прямо всередині HStack
-                            Button(action: { isPasswordVisible.toggle() }) {
-                                Image(systemName: isPasswordVisible ? "eye" : "eye.slash")
-                                    .foregroundColor(Color("tx-3"))
-                            }
-                        }
-                        .padding()
-                        .background(Color(.secondarySystemBackground))
-                        .cornerRadius(12)
-                        .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color(.separator), lineWidth: 0.5))
-                        
-                        
-                        // ==========================================
-                        // --- ПІДТВЕРДЖЕННЯ ПАРОЛЯ ---
-                        // ==========================================
-                        Text("Confirm Password")
-                            .font(.subheadline)
-                            .foregroundColor(Color("tx-3"))
-                            .padding(.horizontal, 5)
-                        
-                        HStack(spacing: 12) {
-                            Image(systemName: "lock")
-                                .foregroundColor(Color("tx-3"))
-                            
-                            Group {
-                                if isConfirmPasswordVisible {
-                                    TextField("Confirm your password", text: $confirmPassword)
-                                } else {
-                                    SecureField("Confirm your password", text: $confirmPassword)
-                                }
-                            }
-                            .textContentType(.newPassword)
-                            .foregroundColor(.primary)
-                            .tint(.primary)
-                            .accentColor(.primary)
-                            
-                            Button(action: { isConfirmPasswordVisible.toggle() }) {
-                                Image(systemName: isConfirmPasswordVisible ? "eye" : "eye.slash")
-                                    .foregroundColor(Color("tx-3"))
-                            }
-                        }
-                        .padding()
-                        .background(Color(.secondarySystemBackground))
-                        .cornerRadius(12)
-                        .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color(.separator), lineWidth: 0.5))
-                        
+                        CustomInputField(
+                                    title: "Email address",
+                                    iconName: "envelope",
+                                    placeholder: "Enter your email address",
+                                    text: $email,
+                                    keyboardType: .emailAddress,
+                                    textContentType: .emailAddress
+                                )
+                                
+                                // --- ПАРОЛЬ ---
+                                CustomInputField(
+                                    title: "Password",
+                                    iconName: "lock",
+                                    placeholder: "Enter your password",
+                                    text: $password,
+                                    isPassword: true,
+                                    textContentType: .newPassword
+                                )
+                                
+                                // --- ПІДТВЕРДЖЕННЯ ПАРОЛЯ ---
+                                CustomInputField(
+                                    title: "Confirm Password",
+                                    iconName: "lock",
+                                    placeholder: "Confirm your password",
+                                    text: $confirmPassword,
+                                    isPassword: true,
+                                    textContentType: .newPassword
+                                )
                         // --- ПОМИЛКИ ---
                         if let error = localError ?? viewModel.errorMessage {
                             Text(error)
