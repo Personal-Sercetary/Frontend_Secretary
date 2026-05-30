@@ -27,72 +27,34 @@ struct SignIn: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
-                Spacer() // 🟢 1. Розподіляє простір між заголовком і формою
+                Spacer() 
                 
                 // --- БЛОК 2: Форма введення ---
                 VStack(spacing: 35) {
-                    VStack(alignment: .leading, spacing: 15) {
-                        
-                        // --- БЛОК EMAIL ---
-                        Text("Email address")
-                            .font(.subheadline)
-                            .foregroundColor(Color("tx-3"))
-                            .padding(.horizontal, 5)
-                        
-                        HStack(spacing: 12) {
-                            Image(systemName: "envelope")
-                                .foregroundColor(Color("tx-3"))
+                        VStack(alignment: .leading, spacing: 15) {
                             
-                            TextField("Enter your email address", text: $email)
-                                .keyboardType(.emailAddress)
-                                .textContentType(.emailAddress)
-                                .autocapitalization(.none)
-                                .autocorrectionDisabled(true)
-                                .foregroundColor(.primary)
-                                .tint(.primary)
-                                .accentColor(.primary)
+                            // 1. Поле Email
+                            CustomInputField(
+                                title: "Email address",
+                                iconName: "envelope",
+                                placeholder: "Enter your email address",
+                                text: $email,
+                                keyboardType: .emailAddress,
+                                textContentType: .emailAddress
+                            )
+                            
+                            // 2. Поле Password
+                            CustomInputField(
+                                title: "Password",
+                                iconName: "lock",
+                                placeholder: "Enter your password",
+                                text: $password,
+                                isPassword: true, // Вмикає режим пароля (крапки + око)
+                                textContentType: .password
+                            )
+                            
                         }
-                        .padding() // Відступи всередині поля
-                        .background(Color(.secondarySystemBackground)) // Фон поля
-                        .cornerRadius(12) // Закруглення
-                        .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color(.separator), lineWidth: 0.5)) // Рамка
-                        
-                        
-                        // --- БЛОК PASSWORD ---
-                        Text("Password")
-                            .font(.subheadline)
-                            .foregroundColor(Color("tx-3"))
-                            .padding(.horizontal, 5)
-                        
-                        // Групуємо поля, щоб застосувати один стиль на обидва варіанти
-                        HStack(spacing: 12) {
-                            Image(systemName: "lock")
-                                .foregroundColor(Color("tx-3"))
-                            
-                            Group {
-                                if isPasswordVisible {
-                                    TextField("Enter your password", text: $password)
-                                } else {
-                                    SecureField("Enter your password", text: $password)
-                                }
-                            }
-                            .textContentType(.newPassword)
-                            .foregroundColor(.primary)
-                            .tint(.primary)
-                            .accentColor(.primary)
-                            
-                            // Око тепер лежить прямо всередині HStack
-                            Button(action: { isPasswordVisible.toggle() }) {
-                                Image(systemName: isPasswordVisible ? "eye" : "eye.slash")
-                                    .foregroundColor(Color("tx-3"))
-                            }
-                        }
-                        .padding()
-                        .background(Color(.secondarySystemBackground))
-                        .cornerRadius(12)
-                        .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color(.separator), lineWidth: 0.5))
-                        
-                    }
+                    
                     // Чекбокс та "Забули пароль"
                     HStack {
                         Toggle("", isOn: $stayLoggedIn)
@@ -126,7 +88,7 @@ struct SignIn: View {
                     }
                 }
                 
-                Spacer() // 🟢 2. Розподіляє простір між формою і входом через Google
+                Spacer()
                 
                 VStack(spacing: 35) {
                     HStack {
@@ -173,9 +135,4 @@ struct SignIn: View {
         .navigationBarHidden(true)
     }
 }
-// Розширення для приховування клавіатури
-extension View {
-    func hideKeyboard() {
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-    }
-}
+
