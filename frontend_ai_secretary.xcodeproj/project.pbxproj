@@ -8,30 +8,59 @@
 
 /* Begin PBXBuildFile section */
 		FA9EB64B2FC63F1B00D070EA /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = FA9EB64A2FC63F1B00D070EA /* Supabase */; };
-		FA9EB6582FC6437600D070EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EB6532FC6437600D070EA /* ContentView.swift */; };
 		FA9EB6592FC6437600D070EA /* frontend_ai_secretaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EB6542FC6437600D070EA /* frontend_ai_secretaryApp.swift */; };
-		FA9EB65A2FC6437600D070EA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EB6552FC6437600D070EA /* Item.swift */; };
 		FA9EB65B2FC6437600D070EA /* SupabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EB6562FC6437600D070EA /* SupabaseManager.swift */; };
 		FA9EB65C2FC6437600D070EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA9EB6512FC6437600D070EA /* Assets.xcassets */; };
 		FA9EB65D2FC6437600D070EA /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FA9EB6522FC6437600D070EA /* Config.xcconfig */; };
+		FA9EB6792FC8309700D070EA /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = FA9EB6782FC8309700D070EA /* GoogleSignIn */; };
+		FA9EB67B2FC8309700D070EA /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FA9EB67A2FC8309700D070EA /* GoogleSignInSwift */; };
+		FA9EB6932FCAD77C00D070EA /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EB6922FCAD76800D070EA /* UINavigationController.swift */; };
+		FA9EB6952FCAD7DA00D070EA /* hideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EB6942FCAD7D800D070EA /* hideKeyboard.swift */; };
+		FA9EB6AE2FCAF89200D070EA /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FA9EB6AD2FCAF87F00D070EA /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FA9EB62C2FC634F500D070EA /* frontend_ai_secretary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = frontend_ai_secretary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9EB6512FC6437600D070EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA9EB6522FC6437600D070EA /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
-		FA9EB6532FC6437600D070EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA9EB6542FC6437600D070EA /* frontend_ai_secretaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = frontend_ai_secretaryApp.swift; sourceTree = "<group>"; };
-		FA9EB6552FC6437600D070EA /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		FA9EB6562FC6437600D070EA /* SupabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseManager.swift; sourceTree = "<group>"; };
+		FA9EB6922FCAD76800D070EA /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		FA9EB6942FCAD7D800D070EA /* hideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hideKeyboard.swift; sourceTree = "<group>"; };
+		FA9EB6AD2FCAF87F00D070EA /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		FA9EB66B2FC7830A00D070EA /* Auth */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		FA9EB6712FC7849D00D070EA /* Auth */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		FA9EB67F2FC8A1DD00D070EA /* Components */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Components;
+			sourceTree = "<group>";
+		};
+		FA9EB6962FCAEC8200D070EA /* Home */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Home;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		FA9EB6292FC634F500D070EA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA9EB67B2FC8309700D070EA /* GoogleSignInSwift in Frameworks */,
 				FA9EB64B2FC63F1B00D070EA /* Supabase in Frameworks */,
+				FA9EB6792FC8309700D070EA /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +94,6 @@
 		FA9EB6502FC6437600D070EA /* App */ = {
 			isa = PBXGroup;
 			children = (
-				FA9EB6532FC6437600D070EA /* ContentView.swift */,
 				FA9EB6542FC6437600D070EA /* frontend_ai_secretaryApp.swift */,
 			);
 			path = App;
@@ -76,11 +104,11 @@
 			children = (
 				FA9EB6502FC6437600D070EA /* App */,
 				FA9EB65E2FC6437D00D070EA /* Models */,
-				FA9EB6612FC6447A00D070EA /* Views */,
+				FA9EB66A2FC782F900D070EA /* Views */,
 				FA9EB6622FC6448100D070EA /* ViewModels */,
-				FA9EB6632FC6449D00D070EA /* Utils */,
-				FA9EB6602FC6445C00D070EA /* Resources */,
+				FA9EB6632FC6449D00D070EA /* Extensions */,
 				FA9EB65F2FC6445600D070EA /* Core */,
+				FA9EB6602FC6445C00D070EA /* Resources */,
 			);
 			path = frontend_ai_secretary;
 			sourceTree = "<group>";
@@ -88,7 +116,6 @@
 		FA9EB65E2FC6437D00D070EA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FA9EB6552FC6437600D070EA /* Item.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -96,6 +123,7 @@
 		FA9EB65F2FC6445600D070EA /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				FA9EB6AD2FCAF87F00D070EA /* .gitignore */,
 				FA9EB6522FC6437600D070EA /* Config.xcconfig */,
 				FA9EB6562FC6437600D070EA /* SupabaseManager.swift */,
 			);
@@ -110,25 +138,31 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		FA9EB6612FC6447A00D070EA /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		FA9EB6622FC6448100D070EA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				FA9EB6712FC7849D00D070EA /* Auth */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		FA9EB6632FC6449D00D070EA /* Utils */ = {
+		FA9EB6632FC6449D00D070EA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FA9EB6942FCAD7D800D070EA /* hideKeyboard.swift */,
+				FA9EB6922FCAD76800D070EA /* UINavigationController.swift */,
 			);
-			path = Utils;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FA9EB66A2FC782F900D070EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA9EB6962FCAEC8200D070EA /* Home */,
+				FA9EB67F2FC8A1DD00D070EA /* Components */,
+				FA9EB66B2FC7830A00D070EA /* Auth */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,9 +180,17 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				FA9EB66B2FC7830A00D070EA /* Auth */,
+				FA9EB6712FC7849D00D070EA /* Auth */,
+				FA9EB67F2FC8A1DD00D070EA /* Components */,
+				FA9EB6962FCAEC8200D070EA /* Home */,
+			);
 			name = frontend_ai_secretary;
 			packageProductDependencies = (
 				FA9EB64A2FC63F1B00D070EA /* Supabase */,
+				FA9EB6782FC8309700D070EA /* GoogleSignIn */,
+				FA9EB67A2FC8309700D070EA /* GoogleSignInSwift */,
 			);
 			productName = frontend_ai_secretary;
 			productReference = FA9EB62C2FC634F500D070EA /* frontend_ai_secretary.app */;
@@ -180,6 +222,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				FA9EB63C2FC637F200D070EA /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				FA9EB6772FC8309700D070EA /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FA9EB62D2FC634F500D070EA /* Products */;
@@ -197,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA9EB65C2FC6437600D070EA /* Assets.xcassets in Resources */,
+				FA9EB6AE2FCAF89200D070EA /* .gitignore in Resources */,
 				FA9EB65D2FC6437600D070EA /* Config.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,10 +252,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA9EB6582FC6437600D070EA /* ContentView.swift in Sources */,
 				FA9EB6592FC6437600D070EA /* frontend_ai_secretaryApp.swift in Sources */,
-				FA9EB65A2FC6437600D070EA /* Item.swift in Sources */,
+				FA9EB6932FCAD77C00D070EA /* UINavigationController.swift in Sources */,
 				FA9EB65B2FC6437600D070EA /* SupabaseManager.swift in Sources */,
+				FA9EB6952FCAD7DA00D070EA /* hideKeyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +264,7 @@
 /* Begin XCBuildConfiguration section */
 		FA9EB6372FC634F700D070EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA9EB6522FC6437600D070EA /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -284,6 +329,7 @@
 		};
 		FA9EB6382FC634F700D070EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA9EB6522FC6437600D070EA /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -341,6 +387,7 @@
 		};
 		FA9EB63A2FC634F700D070EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA9EB6522FC6437600D070EA /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -355,6 +402,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,6 +422,7 @@
 		};
 		FA9EB63B2FC634F700D070EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA9EB6522FC6437600D070EA /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -388,6 +437,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,6 +487,14 @@
 				minimumVersion = 2.5.1;
 			};
 		};
+		FA9EB6772FC8309700D070EA /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -444,6 +502,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA9EB63C2FC637F200D070EA /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Supabase;
+		};
+		FA9EB6782FC8309700D070EA /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA9EB6772FC8309700D070EA /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		FA9EB67A2FC8309700D070EA /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA9EB6772FC8309700D070EA /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
