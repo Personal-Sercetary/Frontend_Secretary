@@ -6,20 +6,20 @@ struct AuthView: View {
     var body: some View {
         Group {
             if viewModel.isAuthenticated {
-                // ТУТ БУДЕ ТВІЙ ГОЛОВНИЙ ЕКРАН ДОДАТКА
-                VStack {
-                    Text("Вітаємо в AI Secretary!")
-                        .font(.title)
-                    Button(action: {
-                        Task {
-                            await viewModel.signOut()
-                        }
-                    }) {
-                        Text("Вийти")
-                            .foregroundColor(.red)
-                    }
-                    .padding()
-                }
+                MainTabView()
+//                VStack {
+//                    Text("Вітаємо в AI Secretary!")
+//                        .font(.title)
+//                    Button(action: {
+//                        Task {
+//                            await viewModel.signOut()
+//                        }
+//                    }) {
+//                        Text("Вийти")
+//                            .foregroundColor(.red)
+//                    }
+//                    .padding()
+//                }
             } else {
                 // Якщо не авторизований - показуємо навігаційний стек авторизації
                 NavigationStack {

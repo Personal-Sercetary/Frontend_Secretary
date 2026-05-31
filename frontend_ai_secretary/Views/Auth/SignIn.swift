@@ -23,7 +23,7 @@ struct SignIn: View {
                         .fontWeight(.bold)
                     Text("Continue your journey with rooted warmth. Please enter your details below.")
                         .font(.subheadline)
-                        .foregroundColor(.text)
+                        .foregroundColor(Color("tx-2"))
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 

@@ -16,6 +16,7 @@
 		FA9EB67B2FC8309700D070EA /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FA9EB67A2FC8309700D070EA /* GoogleSignInSwift */; };
 		FA9EB6932FCAD77C00D070EA /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EB6922FCAD76800D070EA /* UINavigationController.swift */; };
 		FA9EB6952FCAD7DA00D070EA /* hideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EB6942FCAD7D800D070EA /* hideKeyboard.swift */; };
+		FA9EB6C52FCC74E400D070EA /* TasksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EB6C42FCC74DC00D070EA /* TasksModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		FA9EB6562FC6437600D070EA /* SupabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseManager.swift; sourceTree = "<group>"; };
 		FA9EB6922FCAD76800D070EA /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		FA9EB6942FCAD7D800D070EA /* hideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hideKeyboard.swift; sourceTree = "<group>"; };
+		FA9EB6C42FCC74DC00D070EA /* TasksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -47,6 +49,11 @@
 		FA9EB6962FCAEC8200D070EA /* Home */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Home;
+			sourceTree = "<group>";
+		};
+		FA9EB6CC2FCC76B600D070EA /* MainTab */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MainTab;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -148,6 +155,7 @@
 		FA9EB66A2FC782F900D070EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FA9EB6CC2FCC76B600D070EA /* MainTab */,
 				FA9EB6962FCAEC8200D070EA /* Home */,
 				FA9EB67F2FC8A1DD00D070EA /* Components */,
 				FA9EB66B2FC7830A00D070EA /* Auth */,
@@ -158,6 +166,7 @@
 		FA9EB6C32FCC4E3000D070EA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA9EB6C42FCC74DC00D070EA /* TasksModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,6 +191,7 @@
 				FA9EB6712FC7849D00D070EA /* Auth */,
 				FA9EB67F2FC8A1DD00D070EA /* Components */,
 				FA9EB6962FCAEC8200D070EA /* Home */,
+				FA9EB6CC2FCC76B600D070EA /* MainTab */,
 			);
 			name = frontend_ai_secretary;
 			packageProductDependencies = (
@@ -251,6 +261,7 @@
 				FA9EB6592FC6437600D070EA /* frontend_ai_secretaryApp.swift in Sources */,
 				FA9EB6932FCAD77C00D070EA /* UINavigationController.swift in Sources */,
 				FA9EB65B2FC6437600D070EA /* SupabaseManager.swift in Sources */,
+				FA9EB6C52FCC74E400D070EA /* TasksModel.swift in Sources */,
 				FA9EB6952FCAD7DA00D070EA /* hideKeyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
