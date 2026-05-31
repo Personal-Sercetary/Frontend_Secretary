@@ -16,7 +16,6 @@
 		FA9EB67B2FC8309700D070EA /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FA9EB67A2FC8309700D070EA /* GoogleSignInSwift */; };
 		FA9EB6932FCAD77C00D070EA /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EB6922FCAD76800D070EA /* UINavigationController.swift */; };
 		FA9EB6952FCAD7DA00D070EA /* hideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EB6942FCAD7D800D070EA /* hideKeyboard.swift */; };
-		FA9EB6AE2FCAF89200D070EA /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FA9EB6AD2FCAF87F00D070EA /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		FA9EB6562FC6437600D070EA /* SupabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseManager.swift; sourceTree = "<group>"; };
 		FA9EB6922FCAD76800D070EA /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		FA9EB6942FCAD7D800D070EA /* hideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hideKeyboard.swift; sourceTree = "<group>"; };
-		FA9EB6AD2FCAF87F00D070EA /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -103,7 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				FA9EB6502FC6437600D070EA /* App */,
-				FA9EB65E2FC6437D00D070EA /* Models */,
+				FA9EB6C32FCC4E3000D070EA /* Models */,
 				FA9EB66A2FC782F900D070EA /* Views */,
 				FA9EB6622FC6448100D070EA /* ViewModels */,
 				FA9EB6632FC6449D00D070EA /* Extensions */,
@@ -113,17 +111,9 @@
 			path = frontend_ai_secretary;
 			sourceTree = "<group>";
 		};
-		FA9EB65E2FC6437D00D070EA /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		FA9EB65F2FC6445600D070EA /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				FA9EB6AD2FCAF87F00D070EA /* .gitignore */,
 				FA9EB6522FC6437600D070EA /* Config.xcconfig */,
 				FA9EB6562FC6437600D070EA /* SupabaseManager.swift */,
 			);
@@ -163,6 +153,13 @@
 				FA9EB66B2FC7830A00D070EA /* Auth */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FA9EB6C32FCC4E3000D070EA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +237,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA9EB65C2FC6437600D070EA /* Assets.xcassets in Resources */,
-				FA9EB6AE2FCAF89200D070EA /* .gitignore in Resources */,
 				FA9EB65D2FC6437600D070EA /* Config.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
