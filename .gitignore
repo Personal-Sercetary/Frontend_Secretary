@@ -1,1 +1,3 @@
 Config.xcconfig
+*.xcuserstate
+.DS_Store
